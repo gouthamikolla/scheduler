@@ -43,8 +43,18 @@ const appointments = [
   },
 ];
 export default function Application(props) {
-  const [day, setDay] = useState("Monday");
-  const [days, setDays] = useState([]);
+  //const [day, setDay] = useState("Monday");
+  //const [days, setDays] = useState([]);
+
+  const setDay = (day) => setState({ ...state, day });
+  const setDays = (days) => setState((prev) => ({ ...prev, days }));
+
+  const [state, setState] = useState({
+    day: "Monday",
+    days: [],
+    appointments: {},
+  });
+
   const allAppointments = appointments.map((appointment) => (
     <Appointment
       key={appointment.id}
@@ -55,11 +65,11 @@ export default function Application(props) {
   ));
 
   useEffect(() => {
-    const daysURL = `http://localhost:8001/api/days/`;
-    axios.get(daysURL).then((response) => {
-      setDays([...response.data.results]);
+    axios.get("http://localhost:8001/api/days/").then((response) => {
+      setDays(response.data);
     });
   }, []);
+
   return (
     <main className="layout">
       <section className="sidebar">
@@ -76,7 +86,7 @@ export default function Application(props) {
             setDay={(day) => console.log(day)}
           /> */}
           {/*<DayList days={days} day={day} setDay={setDay} /> */}
-          <DayList days={days} value={day} onChange={setDay} />
+          <DayList days={state.days} value={state.day} setDay={setDay} />
         </nav>
         <img
           className="sidebar__lhl sidebar--centered"

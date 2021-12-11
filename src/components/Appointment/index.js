@@ -5,7 +5,6 @@ import Empty from "components/Appointment/Empty.js";
 import Show from "components/Appointment/Show.js";
 
 export default function Appointment(props) {
-  console.log(props);
   return (
     <Fragment>
       <Header time={props.time} />
