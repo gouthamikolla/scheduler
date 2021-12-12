@@ -14,6 +14,7 @@ export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
+
   return (
     <Fragment>
       <Header time={props.time} />
@@ -27,7 +28,7 @@ export default function Appointment(props) {
           <Form
             student=""
             interviewer={null}
-            interviewers={[]}
+            interviewers={props.interviewers}
             onSave={() => console.log("on SAVE")}
             onCancel={() => back(EMPTY)}
           />
