@@ -35,6 +35,7 @@ export default function Application(props) {
         time={appointment.time}
         interview={interview}
         interviewers={dayInterviewers}
+        bookInterview={bookInterview}
       />
     );
   });
@@ -61,6 +62,22 @@ export default function Application(props) {
       });
     });
   }, []);
+
+  async function bookInterview(id, interview) {
+    console.log(id, interview);
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview },
+    };
+
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment,
+    };
+
+    await axios.put(`/api/appointments/${id}`, { interview });
+    setState({ ...state, appointments });
+  }
 
   return (
     <main className="layout">
