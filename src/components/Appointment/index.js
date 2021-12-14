@@ -30,6 +30,21 @@ export default function Appointment(props) {
     props.bookInterview(props.id, interview).then(() => transition(SHOW));
   }
 
+  function confirmDelete() {
+    transition(CONFIRM);
+  }
+
+  function deleteAppointment() {
+    transition(DELETING);
+    props
+      .deleteInterview(props.id, props.interview)
+      .then(() => transition(EMPTY));
+  }
+
+  function doNotDelete() {
+    transition(SHOW);
+  }
+
   return (
     <Fragment>
       <Header time={props.time} />
@@ -40,14 +55,14 @@ export default function Appointment(props) {
           <Show
             student={props.interview.student}
             interview={props.interview}
-            onDelete={() => console.log("delete")}
+            onDelete={() => confirmDelete()}
           />
         )}
         {mode === CONFIRM && (
           <Confirm
             message="Are you sure you would like to delete?"
-            onConfirm={() => console.log("Confirm Delete")}
-            onCancel={() => console.log("Confirm Cancel")}
+            onConfirm={() => deleteAppointment()}
+            onCancel={() => doNotDelete()}
           />
         )}
         {mode === DELETING && <Status message="Deleting" />}
