@@ -11,6 +11,7 @@ import Form from "./Form";
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
 const CREATE = "CREATE";
+const EDIT = "EDIT";
 const SAVING = "SAVING";
 const DELETING = "DELETING";
 const CONFIRM = "CONFIRM";
@@ -28,6 +29,10 @@ export default function Appointment(props) {
 
     transition(SAVING);
     props.bookInterview(props.id, interview).then(() => transition(SHOW));
+  }
+
+  function edit() {
+    transition(EDIT);
   }
 
   function confirmDelete() {
@@ -56,6 +61,16 @@ export default function Appointment(props) {
             student={props.interview.student}
             interview={props.interview}
             onDelete={() => confirmDelete()}
+            onEdit={() => edit()}
+          />
+        )}
+        {mode === EDIT && (
+          <Form
+            student={props.interview.student}
+            interviewer={props.interview.interviewer.id}
+            interviewers={props.interviewers}
+            onSave={(student, interviewer) => save(student, interviewer)}
+            onCancel={() => back(SHOW)}
           />
         )}
         {mode === CONFIRM && (
