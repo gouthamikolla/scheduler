@@ -44,8 +44,10 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment,
     };
-    await axios.put(`/api/appointments/${id}`, { interview });
-    updateSpots(state, appointments, id);
+    await axios
+      .put(`/api/appointments/${id}`, { interview })
+      .then(() => updateSpots(state, appointments));
+
     setState({ ...state, appointments });
   }
 
@@ -60,8 +62,10 @@ export default function useApplicationData() {
       [id]: appointment,
     };
 
-    await axios.delete(`/api/appointments/${id}`, { interview });
-    updateSpots(state, appointments);
+    await axios
+      .delete(`/api/appointments/${id}`, { interview })
+      .then(() => updateSpots(state, appointments));
+
     setState({ ...state, appointments });
   }
 
