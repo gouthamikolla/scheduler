@@ -14,7 +14,6 @@ export default function Form(props) {
   };
 
   const reset = () => {
-    console.log("reset");
     setStudent("");
     setInterviewer("");
   };
