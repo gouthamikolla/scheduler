@@ -35,7 +35,6 @@ export default function useApplicationData() {
   }, []);
 
   async function bookInterview(id, interview) {
-    console.log(id, interview);
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview },
@@ -45,8 +44,8 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment,
     };
-
     await axios.put(`/api/appointments/${id}`, { interview });
+    updateSpots(state, appointments, id);
     setState({ ...state, appointments });
   }
 
@@ -62,8 +61,21 @@ export default function useApplicationData() {
     };
 
     await axios.delete(`/api/appointments/${id}`, { interview });
+    updateSpots(state, appointments);
     setState({ ...state, appointments });
   }
 
+  function updateSpots(state, appointments) {
+    let totalSpots = 0;
+    for (let currentday of state.days) {
+      if (currentday.name === state.day) {
+        for (let currentappt of currentday.appointments) {
+          const matchedAppt = appointments[currentappt];
+          if (matchedAppt.interview === null) ++totalSpots;
+        }
+        currentday.spots = totalSpots;
+      }
+    }
+  }
   return { state, setDay, bookInterview, deleteInterview };
 }
