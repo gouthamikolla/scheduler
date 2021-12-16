@@ -37,11 +37,16 @@ npm run storybook
 
 ## Final Product
 
-!["screenshot of Initial Interview Scheduler Page"]
-!["screenshot of Scheduling an Interview "]
-!["screenshot of Confirmed Interview Schedule"]
-!["screenshot of Confirmation for deleting an Interview"]
-!["screenshot of Error While Deleting Interview"]
+!["screenshot of Initial Interview Scheduler Page"](https://github.com/gouthamikolla/scheduler/blob/master/docs/Intial_Interview_Scheduler_Page.png)
+
+!["screenshot of Scheduling an Interview "](https://github.com/gouthamikolla/scheduler/blob/master/docs/Scheduling_Interview.png)
+
+!["screenshot of Confirmed Interview Schedule"](https://github.com/gouthamikolla/scheduler/blob/master/docs/Interview_Schedule.png)
+
+!["screenshot of Confirmation for deleting an Interview"](https://github.com/gouthamikolla/scheduler/blob/master/docs/Deleting_Interview.png)
+
+!["screenshot of Error While Deleting Interview"](https://github.com/gouthamikolla/scheduler/blob/master/docs/Deleting_Interview.png)
+
 
 ## Dependencies
 
