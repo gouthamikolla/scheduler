@@ -45,7 +45,7 @@ npm run storybook
 
 !["screenshot of Confirmation for deleting an Interview"](https://github.com/gouthamikolla/scheduler/blob/master/docs/Deleting_Interview.png)
 
-!["screenshot of Error While Deleting Interview"](https://github.com/gouthamikolla/scheduler/blob/master/docs/Deleting_Interview.png)
+!["screenshot of Error While Deleting Interview"](https://github.com/gouthamikolla/scheduler/blob/master/docs/Error_Deleting_Interview.png)
 
 
 ## Dependencies
