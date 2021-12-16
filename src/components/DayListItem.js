@@ -2,6 +2,11 @@ import React from "react";
 import "components/DayListItem.scss";
 import classNames from "classnames";
 
+/**
+ * This function creates and returns the DayListItem component based on the properties passed.
+ * @param {*} props
+ * @returns
+ */
 export default function DayListItem(props) {
   const formatSpots = function () {
     return props.spots === 0
@@ -22,7 +27,6 @@ export default function DayListItem(props) {
       data-testid="day"
     >
       <h2 className="text--regular">{props.name}</h2>
-      {/*<h3 className="text--light">{props.spots} spots remaining</h3> */}
       <h3 className="text--light">{formatSpots()}</h3>
     </li>
   );

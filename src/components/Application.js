@@ -9,6 +9,11 @@ import {
 import { getInterview } from "helpers/selectors";
 import useApplicationData from "hooks/useApplicationData";
 
+/**
+ * This function constructs appointment components and also returns application component.
+ * @param {*} props
+ * @returns
+ */
 export default function Application(props) {
   const { state, setDay, bookInterview, deleteInterview } =
     useApplicationData();

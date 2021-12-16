@@ -1,6 +1,11 @@
 import React from "react";
 import DayListItem from "components/DayListItem";
 
+/**
+ * THis function calls dayistItem components and returns the daylistitem components based on the props that are passed.
+ * @param {*} props
+ * @returns
+ */
 export default function DayList(props) {
   const dayListItems = props.days.map((day) => (
     <DayListItem
@@ -11,31 +16,5 @@ export default function DayList(props) {
       setDay={props.setDay}
     />
   ));
-  return (
-    <ul>
-      {/*
-      <DayListItem
-        key={props.days[0].id}
-        name={props.days[0].name}
-        spots={props.days[0].spots}
-        selected={props.days[0].name === props.day}
-        setDay={props.setDay}
-      />
-      <DayListItem
-        key={props.days[1].id}
-        name={props.days[1].name}
-        spots={props.days[1].spots}
-        selected={props.days[1].name === props.day}
-        setDay={props.setDay}
-      />
-      <DayListItem
-        key={props.days[2].id}
-        name={props.days[2].name}
-        spots={props.days[2].spots}
-        selected={props.days[2].name === props.day}
-        setDay={props.setDay}
-      /> */}
-      {dayListItems}
-    </ul>
-  );
+  return <ul>{dayListItems}</ul>;
 }

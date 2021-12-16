@@ -1,5 +1,9 @@
 import { useState } from "react";
-
+/**
+ * This function helps to transition application state from one phase to another phase
+ * @param {state} initial
+ * @returns
+ */
 export default function useVisualMode(initial) {
   const [history, setHistory] = useState([initial]);
 

@@ -19,6 +19,11 @@ const CONFIRM = "CONFIRM";
 const ERROR_SAVE = "ERROR_SAVE";
 const ERROR_DELETE = "ERROR_DELETE";
 
+/**
+ * This function creates a compoent based on the state of the application.
+ * @param {*} props
+ * @returns
+ */
 export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY

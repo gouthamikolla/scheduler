@@ -1,6 +1,11 @@
 import React from "react";
 import "components/Appointment/styles.scss";
 
+/**
+ * This function creates show component for an interview that is created.
+ * @param {*} props
+ * @returns
+ */
 export default function Show(props) {
   return (
     <main className="appointment__card appointment__card--show">

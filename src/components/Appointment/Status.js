@@ -1,6 +1,11 @@
 import React from "react";
 import "components/Appointment/styles.scss";
 
+/**
+ * This functon creats the status component and returns it based on properties.
+ * @param {*} props
+ * @returns
+ */
 export default function Status(props) {
   return (
     <main className="appointment__card appointment__card--status">

@@ -3,6 +3,11 @@ import "components/Appointment/styles.scss";
 import Button from "components/Button";
 import InterviewerList from "components/InterviewerList";
 
+/**
+ * This function creates a form component while creating an interview / editing an interview.
+ * @param {*} props
+ * @returns
+ */
 export default function Form(props) {
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);

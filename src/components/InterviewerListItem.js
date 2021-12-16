@@ -2,6 +2,11 @@ import React from "react";
 import "components/InterviewerListItem.scss";
 import classNames from "classnames";
 
+/**
+ *  This function returns the interviewlist item compenent.
+ * @param {*} props
+ * @returns
+ */
 export default function InterviewerListItem(props) {
   const interviewerClass = classNames(
     "interviewers__item",

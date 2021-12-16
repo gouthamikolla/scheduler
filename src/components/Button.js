@@ -3,16 +3,12 @@ import React from "react";
 import "components/Button.scss";
 import classNames from "classnames";
 
+/**
+ * This function creates and returns button component based on properties passed.
+ * @param {*} props
+ * @returns
+ */
 export default function Button(props) {
-  /*  let buttonClass = "button";
-    if (props.confirm) {
-    buttonClass += " button--confirm";
-  }
-
-  if (props.danger) {
-    buttonClass += " button--danger";
-  }
-*/
   const buttonClass = classNames(
     "button",
     { "button--confirm": props.confirm },

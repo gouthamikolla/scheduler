@@ -1,6 +1,11 @@
 import React from "react";
 import "components/Appointment/styles.scss";
 
+/**
+ * This function creates and returns the Empty component.
+ * @param {*} props
+ * @returns
+ */
 export default function Empty(props) {
   return (
     <main className="appointment__add">

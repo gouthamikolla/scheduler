@@ -1,6 +1,11 @@
 import React from "react";
 import "components/Appointment/styles.scss";
 
+/**
+ * This function creates and returns an Error component to display
+ * @param {*} props
+ * @returns
+ */
 export default function Error(props) {
   return (
     <main className="appointment__card appointment__card--error">
